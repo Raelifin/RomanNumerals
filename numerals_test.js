@@ -1,6 +1,7 @@
 
-QUnit.test("Can convert from 1 to I", function(assert) {
+QUnit.test("Can convert from 1 to I and from 3 to III", function(assert) {
 	assert.equal(arabicToRoman(1), 'I');
+	assert.equal(arabicToRoman(3), 'III');
 });
 
 QUnit.test("Throws exception when given nonstandard input", function(assert) {
