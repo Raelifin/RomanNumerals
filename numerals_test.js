@@ -26,3 +26,11 @@ QUnit.test("Can convert from Roman to Arabic", function(assert) {
 	//assert.equal(romanToArabic('MCMLXXXIX'), 1989);
 	//assert.equal(romanToArabic('MMMMCMXCIX'), 4999);
 });
+
+QUnit.test("Roman to Arabic throws exception when given nonstandard input", function(assert) {
+	assert.throws(function() { romanToArabic(1); });
+	//assert.throws(function() { romanToArabic('hello'); });
+	//assert.throws(function() { romanToArabic('IIII'); });
+	//assert.throws(function() { romanToArabic('IVIV'); });
+	//assert.throws(function() { romanToArabic(''); });
+});

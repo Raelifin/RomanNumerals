@@ -38,5 +38,7 @@ function arabicToRoman(integer) {
 }
 
 function romanToArabic(numeral) {
+	if (typeof numeral != 'string') { throw 'Input must be a string'; }
+	
 	return 1;
 }
