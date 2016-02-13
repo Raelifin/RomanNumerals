@@ -36,3 +36,7 @@ function arabicToRoman(integer) {
 	}
 	return result;
 }
+
+function romanToArabic(numeral) {
+	return 1;
+}
