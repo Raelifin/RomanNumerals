@@ -19,7 +19,7 @@ QUnit.test("Arabic to Roman throws exception when given nonstandard input", func
 
 QUnit.test("Can convert from Roman to Arabic", function(assert) {
 	assert.equal(romanToArabic('I'), 1);
-	//assert.equal(romanToArabic('III'), 3);
+	assert.equal(romanToArabic('III'), 3);
 	//assert.equal(romanToArabic('IV'), 4);
 	//assert.equal(romanToArabic('IX'), 9);
 	//assert.equal(romanToArabic('MLXVI'), 1066);
@@ -31,6 +31,7 @@ QUnit.test("Roman to Arabic throws exception when given nonstandard input", func
 	assert.throws(function() { romanToArabic(1); });
 	//assert.throws(function() { romanToArabic('hello'); });
 	//assert.throws(function() { romanToArabic('IIII'); });
+	//assert.throws(function() { romanToArabic('ii'); });
 	//assert.throws(function() { romanToArabic('IVIV'); });
-	//assert.throws(function() { romanToArabic(''); });
+	assert.throws(function() { romanToArabic(''); });
 });

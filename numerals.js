@@ -39,6 +39,22 @@ function arabicToRoman(integer) {
 
 function romanToArabic(numeral) {
 	if (typeof numeral != 'string') { throw 'Input must be a string'; }
+	if (numeral.length < 1) { throw 'Input must not be empty'; }
 	
-	return 1;
+	var result = 0;
+	while (numeral.length > 0) {
+		var largest = '?';
+		var largestVal = romanComponents[largest];
+		for (var romanSymb in romanComponents) {
+			var romanVal = romanComponents[romanSymb];
+			if (romanSymb === numeral.substring(0,romanSymb.length)) {
+				largest = romanSymb;
+				largestVal = romanVal;
+			}
+		}
+		if (largest === '?') { throw 'Unrecognized numeral'; }
+		result += largestVal;
+		numeral = numeral.substring(largest.length);
+	}
+	return result;
 }
