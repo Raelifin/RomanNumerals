@@ -1,4 +1,4 @@
 
-QUnit.test("Living in a sane world", function(assert) {
-	assert.equal(1, 1);
+QUnit.test("Can convert from 1 to I", function(assert) {
+	assert.equal(arabicToRoman(1), 'I');
 });
