@@ -41,6 +41,7 @@ function romanToArabic(numeral) {
 	if (typeof numeral != 'string') { throw 'Input must be a string'; }
 	if (numeral.length < 1) { throw 'Input must not be empty'; }
 	
+	var originalNumeral = numeral;
 	var result = 0;
 	while (numeral.length > 0) {
 		var largest = '?';
@@ -56,5 +57,6 @@ function romanToArabic(numeral) {
 		result += largestVal;
 		numeral = numeral.substring(largest.length);
 	}
+	if (arabicToRoman(result) !== originalNumeral) { throw 'Invalid numeral'; }
 	return result;
 }
